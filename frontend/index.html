@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludo AI Arena</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Agents Project • Classic Ludo</p>
+        <h1>Ludo AI Arena</h1>
+        <p class="subcopy">
+          A four-player Ludo game with a board inspired by the classic layout.
+          You play against three AI agents with different strategies.
+        </p>
+      </div>
+
+      <div class="status-card">
+        <div class="status-label">Game status</div>
+        <div id="statusText" class="status-text">Loading...</div>
+        <div id="turnText" class="turn-text"></div>
+        <div class="status-mini">
+          <span id="diceValue" class="dice-chip">-</span>
+          <span id="aiModeText">Booting engine…</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="board-panel glass">
+        <div class="board-topbar">
+          <div class="legend">
+            <span><i class="dot human"></i>You</span>
+            <span><i class="dot p1"></i>Greedy Best-First Search</span>
+            <span><i class="dot p2"></i>Defensive Heuristic Greedy Search</span>
+            <span><i class="dot p3"></i>A*-Inspired Informed Search</span>
+          </div>
+
+          <div class="actions">
+            <button id="newGameBtn" class="secondary">New Game</button>
+            <button id="autoBtn" class="secondary">Auto AI</button>
+          </div>
+        </div>
+
+        <div class="board-shell">
+          <div class="board-ring"></div>
+          <div id="board" class="board" aria-label="Ludo board"></div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="glass control-card">
+          <h2>Controls</h2>
+          <p class="hint">Roll the dice first, then pick one of the legal tokens.</p>
+          <div class="controls">
+            <button id="rollBtn" class="primary">Roll Dice</button>
+            <div class="dice-box">
+              <div class="dice-label">Dice</div>
+              <div id="diceValueSide" class="dice-value">-</div>
+            </div>
+          </div>
+          <div id="moveButtons" class="move-buttons"></div>
+        </section>
+
+        <section class="glass players-card">
+          <h2>Players</h2>
+          <div id="playersList" class="players-list"></div>
+        </section>
+
+        <section class="glass log-card">
+          <h2>Log</h2>
+          <div id="logText" class="log-text">Ready.</div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
